@@ -1,0 +1,23 @@
+#from that string importing template is what works
+#uses some regex in this
+
+from string import Template
+def main():
+    str1="You're watching {0} from {1}".format("Advanced pypy"\
+, "LIL")
+    print(str1)
+    
+    templ=Template("You're watching ${title} from ${author}")
+    str2=templ.substitute(title="Advanced pypy",\
+author="LIL")
+    print(str2)
+    
+    data={
+        "author":"LIL",
+        "title":"Advanced pypy"
+    }
+    str3=templ.substitute(data)
+    print(str3)
+    
+if __name__ == "__main__":
+    main()
